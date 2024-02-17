@@ -4,32 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="loader.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <style>
+        body {
+            overflow: hidden; /* Hide the scrollbar initially */
+        }
+
+        #userDetails {
+            display: none; /* Hide the content initially */
+            text-align: center;
+        }
+
+        .remove-scrollbar {
+            overflow: visible !important; /* Show the scrollbar after the loader is removed */
+        }
+    </style>
     <title>Loader Page</title>
+    <!-- Link the JavaScript file here -->
+    <script src="toggle_theme.js"></script>
 </head>
 <body>
+    <ul class="loader">
+        <li class="logo1"><i class="fab fa-facebook-f"></i></li>
+        <li class="logo2"><i class="fab fa-twitter"></i></li>
+        <li class="logo3"><i class="fab fa-instagram"></i></li>
+        <li class="logo4"><i class="fab fa-linkedin-in"></i></li>
+        <li class="logo5"><i class="fab fa-youtube"></i></li>
+        <li class="logo6"><i class="fab fa-github"></i></li>
+        <li class="logo7"><i class="fab fa-discord"></i></li>
+        <li class="logo8"><i class="fab fa-spotify"></i></li>
+    </ul>
 
-<div class="loader">
-    <div class="c c1"></div>
-    <div class="c c2"></div>
-    <div class="c c3"></div>
-    <div class="c c4"></div>
-    <div class="c c5"></div>
-    <div class="c c6"></div>
-</div>
+    <script>
+        // JavaScript to remove the loader after a delay of 1000 milliseconds
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                var loader = document.querySelector('.loader');
+                loader.classList.add('remove');
 
-<!-- Your content goes here -->
-<h1>Welcome to My Loader Page!</h1>
-<p>This is some content on the page.</p>
+                // Show the content after the loader is removed
+                var userDetails = document.getElementById('userDetails');
+                userDetails.style.display = 'block';
 
-<script>
-    // JavaScript to remove the loader after a delay of 3 seconds (3000 milliseconds)
-    document.addEventListener("DOMContentLoaded", function() {
-        setTimeout(function() {
-            var loader = document.querySelector('.loader');
-            loader.classList.add('remove');
-        }, 10000);
-    });
-</script>
+                // Add class to body to show scrollbar
+                document.body.classList.add('remove-scrollbar');
 
+                // Redirect to the display page after a delay (500 milliseconds in this example)
+                setTimeout(function() {
+                    window.location.href = 'display_page.html';
+                }, 500);
+            }, 19000);
+        });
+    </script>
+
+    <!-- Your content goes here -->
+    <div id="userDetails">
+        <h1 style="color: red;">Welcome to My Loader Page!</h1>
+        <p style="color: cyan;">This is some content on the page.</p>
+    </div>
 </body>
 </html>
