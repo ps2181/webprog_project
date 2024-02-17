@@ -1,88 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+
+body {
+    background-color: black;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
 .loader {
-    position: absolute;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #0d1117;
-    display: block; /* Set initial state to 'block' */
-    opacity: 1;
-    transition: .5s ease-in-out;
+    display: flex;
+    align-items: center;
 }
 
-/* ... (rest of the CSS) */
-
-
-/* ... (rest of the CSS) */
-
-
-.loader.remove {
-    opacity: 0; 
-    z-index: -1000;
+ul {
+    display: flex;
+    padding: 5px;  /* Remove default padding */
 }
 
-.loader .c {
+ul li {
+    position: absolute;  /* Use absolute positioning */
+    top: 35%;  /* Align vertically centered */
+    left: 40%;  /* Align horizontally centered */
+    transform: translate(-50%, -50%);  /* Center the element */
+    display: block;
+    color: #666;
+    font-size: 100px;
+    height: 200px;
+    width: 200px;
+    background: #171515;
+    line-height: 200px;
     border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-bottom: 7px solid;
-    border-right: 7px solid;
-    border-top: 7px solid transparent !important;
-    border-left: 7px solid transparent !important;
-    animation: rot 1.5s ease-in-out 0s infinite alternate;
+    margin: 0 15px;
+    cursor: pointer;
+    transition: .5s;   
+    filter: brightness(200%) saturate(200%);
+    opacity: 0;
+    text-align: center;
 }
 
-@keyframes rot {
+
+.loader {
+    display: flex;
+    align-items: center;
+}
+
+.logo1 { 
+        background: #4267B2;
+         animation: fadeIn 0.5s ease-in-out 0s forwards, fadeOut 0.5s ease-in-out 1s forwards;
+        box-shadow: 0 0 15px #4267B2;
+        text-shadow: 0 0 15px #4267B2; 
+        transform: scale(1.2);
+        transition:.5s;
+        
+
+        
+        
+    }
+.logo2 { 
+        background: #1DA1F2;
+         animation: fadeIn 0.5s ease-in-out 1.5s forwards, fadeOut 0.5s ease-in-out 3s forwards; 
+        box-shadow: 0 0 15px #1DA1F2;
+        text-shadow: 0 0 15px #1DA1F2;
+        transform: scale(1.2);
+        transition:.5s;
+
+
+
+        
+    }
+.logo3 { 
+         background: linear-gradient(23deg, #515BD4, #8134AF,#DD2A7B); 
+         animation: fadeIn 0.5s ease-in-out 4s forwards, fadeOut 0.5s ease-in-out 5.5s forwards; 
+         box-shadow: 0 0 15px #FF10F0;
+         text-shadow: 0 0 15px #FF10F0;
+         transform: scale(1.2);
+        transition:.5s;
+
+
+
+        
+}
+.logo4 { 
+        background: #2867B2; 
+         animation: fadeIn 0.5s ease-in-out 6.5s forwards, fadeOut 0.5s ease-in-out 8.5s forwards; 
+         box-shadow: 0 0 15px #2867B2;
+        text-shadow: 0 0 15px #2867B2;
+        transform: scale(1.2);
+        transition:.5s;
+
+
+        
+}
+.logo5 { 
+         background: #ff0000; 
+         animation: fadeIn 0.5s ease-in-out 9.5s forwards, fadeOut 0.5s ease-in-out 10.5s forwards;
+         box-shadow: 0 0 15px #ff0000;
+         text-shadow: 0 0 15px #ff0000;
+         transform: scale(1.2);
+        transition:.5s;
+
+
+        
+}
+.logo6 { 
+    background: #171515;
+     animation: fadeIn 0.5s ease-in-out 11.5s forwards, fadeOut 0.5s ease-in-out 13s forwards; 
+    box-shadow: 0 0 15px #171515;
+    text-shadow: 0 0 15px #171515;
+    transform: scale(1.2);
+    transition:.5s;
+}
+.logo7 { 
+    background: #5865F2;
+     animation: fadeIn 0.5s ease-in-out 13.5s forwards, fadeOut 0.5s ease-in-out 15s forwards; 
+    box-shadow: 0 0 15px #5865F2;
+    text-shadow: 0 0 15px #5865F2;
+    transform: scale(1.2);
+    transition:.5s;
+}
+
+
+.logo8 { 
+    background: #1ED760;
+     animation: fadeIn 0.5s ease-in-out 15.5s forwards, fadeOut 0.5s ease-in-out 17s forwards; 
+    box-shadow: 0 0 15px #1ED760;
+    text-shadow: 0 0 15px #1ED760;
+    transform: scale(1.2);
+    transition:.5s;
+}
+@keyframes fadeIn {
     0% {
-        transform: translate(-50%, -50%) rotateZ(0deg);
+        opacity: 0;
+        
     }
-
     100% {
-        transform: translate(-50%, -50%) rotateZ(90deg);
+        opacity: 1;
+        
+        
     }
 }
 
-.loader .c.c1 {
-    width: 300px;
-    height: 300px;
-    border-color: orangered;
-    animation-delay: 0s;
-}
-
-.loader .c.c2 {
-    width: 260px;
-    height: 260px;
-    border-color: indigo;
-    animation-delay: .1s;
-}
-
-.loader .c.c3 {
-    width: 220px;
-    height: 220px;
-    border-color: dodgerblue;
-    animation-delay: .2s;
-}
-
-.loader .c.c4 {
-    width: 180px;
-    height: 180px;
-    border-color: green;
-    animation-delay: .3s;
-}
-
-.loader .c.c5 {
-    width: 140px;
-    height: 140px;
-    border-color: gold;
-    animation-delay: .4s;
-}
-
-.loader .c.c6 {
-    width: 100px;
-    height: 100px;
-    border-color: aqua;
-    animation-delay: .5s;
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        
+        
+    }
+    100% {
+        opacity: 0;
+        
+        
+    }
 }
