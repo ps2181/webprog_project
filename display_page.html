@@ -1,8 +1,20 @@
-<!DOCTYPE>
-<html>
-    <head>
-    </html>
-    <body background="red">
-        <p> this is the trial page bear with it </p>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  href="main.html">
+</head>
+<body onload="checkRefresh()">
+    <p>This is the trial page. Bear with it.</p>
+
+    <script>
+        function checkRefresh() {
+            if (performance.navigation.type === 1) {
+                // Page is being reloaded, redirect to main.html
+                location.href = "main.html";
+            }
+        }
+    </script>
+</body>
 </html>
