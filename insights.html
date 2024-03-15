@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights</title>
+    <link rel="stylesheet" href="mystyles1.css"> <!-- External stylesheet for styling -->
+</head>
+<body>
+    <div class="container" >
+        <!-- Left panel with social media options -->
+        <div class="left-panel">
+            <h2 align="center">Social Media Platforms</h2>
+            <ul class="social-media-list">
+                <li><button class="social-media-btn" onclick="showInfo('facebook')">Facebook</button></li>
+                <li><button class="social-media-btn" onclick="showInfo('twitter')">Twitter</button></li>
+                <li><button class="social-media-btn" onclick="showInfo('instagram')">Instagram</button></li>
+                <li><button class="social-media-btn" onclick="showInfo('linkedin-in')">Linkedin-in</button></li>
+                <li><button class="social-media-btn" onclick="showInfo('youtube')">Youtube</button></li>
+                <li><button class="social-media-btn" onclick="showInfo('github')">Github</button></li>
+                <li><button class="social-media-btn" onclick="showInfo('discord')">Discord</button></li>
+                <li><button class="social-media-btn" onclick="showInfo('spotify')">Spotify</button></li>
+                
+                
+                
+                <!-- Add more social media options as needed -->
+            </ul>
+        </div>
+        
+        <!-- Right panel to display information -->
+        <div class="right-panel">
+            <div id="info-container">
+                <!-- Information about the selected social media will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to show information based on the selected social media
+        function showInfo(socialMedia) {
+            var infoContainer = document.getElementById("info-container");
+            var info = ""; // Placeholder for information
+            
+            // Switch statement to determine information based on the selected social media
+            switch(socialMedia) {
+                case "facebook":
+                    info = "Facebook is a popular social media platform to interact with friends and relatives. Let's dive into what Facebook Insights is, how to access it, and how to interpret the metrics it tracks.";
+                    break;
+                case "twitter":
+                    info = "Twitter is a microblogging platform...";
+                    break;
+                case "instagram":
+                    info = "Instagram is a photo and video sharing platform...";
+                    break;
+                case "facebook":
+                    info = "Facebook is a popular social media platform...";
+                    break;
+                case "twitter":
+                    info = "Twitter is a microblogging platform...";
+                    break;
+                case "instagram":
+                    info = "Instagram is a photo and video sharing platform...";
+                    break;
+                // Add more cases for other social media platforms as needed
+                default:
+                    info = "Select a social media platform to view information.";
+            }
+            
+            // Update the content of the info container
+            infoContainer.innerHTML = info;
+        }
+    </script>
+</body>
+</html>
 
