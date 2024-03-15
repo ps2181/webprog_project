@@ -6,17 +6,50 @@
     <link rel="stylesheet" href="loader.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <style>
+        #insightsButton {
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hover effect for the button */
+        #insightsButton:hover {
+            background-color: darkred;
+        }
+        #userDetails {
+            margin-top: 20px; /* Add margin to the top */
+            margin-bottom: 20px; /* Add margin to the bottom */
+        }
+
+        #userDetails h1 {
+            margin-bottom: 10px; /* Add margin to the bottom of h1 */
+        }
+
+        #userDetails h2 {
+            margin-top: 10px; /* Add margin to the top of h2 */
+        }
+
+        #userDetails h1,
+        #userDetails h2,
+        #userDetails p {
+            margin-bottom: 10px; /* Add margin to the bottom of each element */
+        }
         body {
-            overflow: hidden; /* Hide the scrollbar initially */
+            overflow: hidden; /*Hide the scrollbar initially*/
         }
 
         #userDetails {
-            display: none; /* Hide the content initially */
+            display: none; /*Hide the content initially*/
             text-align: center;
         }
 
         .remove-scrollbar {
-            overflow: visible !important; /* Show the scrollbar after the loader is removed */
+            overflow: visible !important; /*Show the scrollbar after the loader is removed*/
         }
     </style>
     <title>Loader Page</title>
@@ -48,19 +81,34 @@
 
                 // Add class to body to show scrollbar
                 document.body.classList.add('remove-scrollbar');
+            }, 15000); // Timeout for loader
 
-                // Redirect to the display page after a delay (500 milliseconds in this example)
-                setTimeout(function() {
-                    window.location.href = 'display_page.html';
-                }, 500);
-            }, 19000);
+            setTimeout(function() {
+                // Hide the content after 10 seconds
+                var userDetails = document.getElementById('userDetails');
+                userDetails.style.display = 'none';
+            }, 10000); // Timeout for content display
         });
     </script>
 
-    <!-- Your content goes here -->
-    <div id="userDetails">
-        <h1 style="color: red;">Welcome to My Loader Page!</h1>
-        <p style="color: cyan;">This is some content on the page.</p>
-    </div>
+
+<div id="userDetails">
+    <h1 style="color: red;">ILLUMINATE</h1>
+    <h1 style="color: red;">your</h1>
+    <h1 style="color: red;">SOCIAL MEDIA PRESENCE</h1>
+    <h2 style="color:red;">"Empower Your Strategy with Data-Driven Insights."</h2>
+    <h3 style="color: white; line-height: 1.5;">Navigate the Social Sphere with Confidence. Welcome to the Social Media Analysis Platform where you get the insights of all your social profiles within one platform. Gain deep insights into your social profiles, track your performance, and understand your audience like never before. Our platform provides comprehensive analytics, trend analysis, and engagement metrics across all major social media platforms, including Facebook, Twitter, Instagram, LinkedIn, YouTube, GitHub, Discord, and Spotify. Whether you're a business looking to enhance your marketing strategies or an individual striving to maximize your social impact, our tools empower you to make informed decisions and drive meaningful outcomes. Join us today and take control of your digital journey! </h3>
+    
+    <!-- Button to navigate to the next webpage -->
+    <button id="insightsButton" onclick="navigateToNextPage()">Insights</button>
+</div>
+
+<script>
+    function navigateToNextPage() {
+        // Redirect to the next webpage
+        window.location.href = 'insights.html';
+    }
+</script>
+
 </body>
 </html>
