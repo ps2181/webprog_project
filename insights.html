@@ -5,25 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insights</title>
     <link rel="stylesheet" href="mystyles1.css"> <!-- External stylesheet for styling -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container" >
+    <div class="container">
         <!-- Left panel with social media options -->
         <div class="left-panel">
             <h2 align="center">Social Media Platforms</h2>
             <ul class="social-media-list">
-                <li><button class="social-media-btn" onclick="showInfo('facebook')">Facebook</button></li>
-                <li><button class="social-media-btn" onclick="showInfo('twitter')">Twitter</button></li>
-                <li><button class="social-media-btn" onclick="showInfo('instagram')">Instagram</button></li>
-                <li><button class="social-media-btn" onclick="showInfo('linkedin-in')">Linkedin-in</button></li>
-                <li><button class="social-media-btn" onclick="showInfo('youtube')">Youtube</button></li>
-                <li><button class="social-media-btn" onclick="showInfo('github')">Github</button></li>
-                <li><button class="social-media-btn" onclick="showInfo('discord')">Discord</button></li>
-                <li><button class="social-media-btn" onclick="showInfo('spotify')">Spotify</button></li>
-                
-                
-                
-                <!-- Add more social media options as needed -->
+                <li>
+                    <button class="social-media-btn" onclick="showInfo('facebook')">
+                        <i class="fab fa-facebook-f"></i> <!-- Font Awesome icon for Facebook -->
+                        <span>Facebook</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="social-media-btn" onclick="showInfo('twitter')">
+                        <i class="fab fa-twitter"></i> <!-- Font Awesome icon for Twitter -->
+                        <span>Twitter</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="social-media-btn" onclick="showInfo('instagram')">
+                        <i class="fab fa-instagram"></i> <!-- Font Awesome icon for Instagram -->
+                        <span>Instagram</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="social-media-btn" onclick="showInfo('linkedin')">
+                        <i class="fab fa-linkedin-in"></i> <!-- Font Awesome icon for LinkedIn -->
+                        <span>Linkedin</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="social-media-btn" onclick="showInfo('youtube')">
+                        <i class="fab fa-youtube"></i> <!-- Font Awesome icon for YouTube -->
+                        <span>Youtube</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="social-media-btn" onclick="showInfo('github')">
+                        <i class="fab fa-github"></i> <!-- Font Awesome icon for GitHub -->
+                        <span >Github</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="social-media-btn" onclick="showInfo('discord')">
+                        <i class="fab fa-discord"></i> <!-- Font Awesome icon for Discord -->
+                        <span>Discord</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="social-media-btn" onclick="showInfo('spotify')">
+                        <i class="fab fa-spotify"></i> <!-- Font Awesome icon for Spotify -->
+                        <span>Spotify</span>
+                    </button>
+                </li>
             </ul>
         </div>
         
@@ -52,16 +89,21 @@
                 case "instagram":
                     info = "Instagram is a photo and video sharing platform...";
                     break;
-                case "facebook":
-                    info = "Facebook is a popular social media platform...";
+                case "linkedin":
+                    info = "LinkedIn is a professional networking platform...";
                     break;
-                case "twitter":
-                    info = "Twitter is a microblogging platform...";
+                case "youtube":
+                    info = "YouTube is a video sharing platform...";
                     break;
-                case "instagram":
-                    info = "Instagram is a photo and video sharing platform...";
+                case "github":
+                    info = "GitHub is a platform for hosting and collaborating on code...";
                     break;
-                // Add more cases for other social media platforms as needed
+                case "discord":
+                    info = "Discord is a communication platform for communities...";
+                    break;
+                case "spotify":
+                    info = "Spotify is a music streaming platform...";
+                    break;
                 default:
                     info = "Select a social media platform to view information.";
             }
@@ -72,4 +114,3 @@
     </script>
 </body>
 </html>
-
