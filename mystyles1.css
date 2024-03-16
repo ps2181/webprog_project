@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -37,11 +46,6 @@ body {
     margin-bottom: 10px;
     transition: background-color 0.3s;
 }
-
-.social-media-btn:hover {
-    background-color: #a2cefd;
-}
-
 .right-panel {
     flex: 1;
     padding: 20px;
@@ -69,3 +73,49 @@ body {
     }
 }
 
+/* Apply hover styles to social media buttons */
+.social-media-btn:hover {
+  width: 200px; /* Width remains unchanged */
+}
+
+.social-media-btn:hover .icon {
+    background: #4267B2 !important; /* Facebook */
+  }
+  
+  .social-media-btn:nth-child(2):hover .icon {
+    background: #1DA1F2 !important; /* Twitter */
+  }
+  
+  .social-media-btn:nth-child(3):hover .icon {
+    background: #E1306C !important; /* Instagram */
+  }
+  
+  .social-media-btn:nth-child(4):hover .icon {
+    background: #333 !important; /* LinkedIn */
+  }
+  
+  .social-media-btn:nth-child(5):hover .icon {
+    background: #ff0000 !important; /* YouTube */
+  }
+  
+  .social-media-btn:nth-child(6):hover .icon {
+    background: #000 !important; /* GitHub */
+  }
+  
+  .social-media-btn:nth-child(7):hover .icon {
+    background: #7289da !important; /* Discord */
+  }
+  
+  .social-media-btn:nth-child(8):hover .icon {
+    background: #1ed760 !important; /* Spotify */
+  }
+  
+  /* Apply hover styles to icon */
+  .social-media-btn:hover .icon i {
+    color: #fff !important; /* Change icon color to white on hover */
+  }
+  
+  /* Apply hover styles to text label */
+  .social-media-btn:hover span {
+    color: #fff !important; /* Change text label color to white on hover */
+  }
