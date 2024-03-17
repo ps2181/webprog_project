@@ -4,60 +4,170 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insights</title>
-    <link rel="stylesheet" href="mystyles1.css"> <!-- External stylesheet for styling -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet"> <!-- Importing Poppins font -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <style>
+        /* Global styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif; /* Applying Poppins font */
+            align-content:center;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container styles */
+        .container {
+            display: flex;
+            height: 100vh;
+            background-color: black;
+        }
+
+        /* Left panel styles */
+        .left-panel {
+            width: 200px;
+            background-color: rgb(5, 5, 5);
+            padding: 20px;
+            border-right: 1px solid rgb(14, 11, 11);
+        }
+
+        .left-panel h2 {
+            margin-bottom: 20px;
+            color: #fcfafa;
+            font-size: 18px; /* Adjusting font size */
+            font-weight: 600; /* Applying font weight */
+            text-align: center;
+        }
+
+        .social-media-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .social-media-btn {
+            width: 100%;
+            padding: 10px 0;
+            background-color:#26acef;
+            color: rgb(248, 245, 245);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: background-color 0.3s;
+            text-align: left; /* Aligning text to left */
+            display: flex; /* Aligning icon and text vertically */
+            align-items: center; /* Aligning icon and text vertically */
+            justify-content: flex-start; /* Aligning icon and text horizontally */
+            padding-left: 15px; /* Adding padding to the left */
+        }
+
+        /* Right panel styles */
+        .right-panel {
+            flex: 1;
+            padding: 20px;
+        }
+
+        #info-container {
+            background-image: url('palak1.jpg');
+            background-size: 100%; 
+            background-color: #26acef;
+            padding: 20px;
+            border-radius: 5px;
+            min-height: 660px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            opacity: 0; /* Initially hidden */
+            transform: scale(0.8); /* Initially scaled down */
+            animation: fadeInScale 2s ease-in-out forwards; /* Apply fade-in and scale-up animation */
+            line-height: 2.0; /* Adding more line spacing */
+            color:white;
+            font-size: 30px;
+            text-align:center;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8); /* Start from a smaller size */
+            }
+            to {
+                opacity: 1;
+                transform: scale(1); /* Scale up to normal size */
+            }
+        }
+
+        /* Hover styles for social media buttons */
+        .social-media-btn:hover {
+            background-color: #0c8ddd; /* Changing background color on hover */
+        }
+
+        /* Hover styles for icon */
+        .social-media-btn:hover .icon i {
+            color: #fff !important; /* Change icon color to white on hover */
+        }
+
+        /* Hover styles for text label */
+        .social-media-btn:hover span {
+            color: #fff !important; /* Change text label color to white on hover */
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <!-- Left panel with social media options -->
         <div class="left-panel">
-            <h2 align="center">Social Media Platforms</h2>
+            <h2>Social Media Platforms</h2>
             <ul class="social-media-list">
                 <li>
                     <button class="social-media-btn" onclick="showInfo('facebook')">
-                        <i class="fab fa-facebook-f"></i> <!-- Font Awesome icon for Facebook -->
+                        <i class="fab fa-facebook-f icon"></i> <!-- Font Awesome icon for Facebook -->
                         <span>Facebook</span>
                     </button>
                 </li>
                 <li>
                     <button class="social-media-btn" onclick="showInfo('twitter')">
-                        <i class="fab fa-twitter"></i> <!-- Font Awesome icon for Twitter -->
+                        <i class="fab fa-twitter icon"></i> <!-- Font Awesome icon for Twitter -->
                         <span>Twitter</span>
                     </button>
                 </li>
                 <li>
                     <button class="social-media-btn" onclick="showInfo('instagram')">
-                        <i class="fab fa-instagram"></i> <!-- Font Awesome icon for Instagram -->
+                        <i class="fab fa-instagram icon"></i> <!-- Font Awesome icon for Instagram -->
                         <span>Instagram</span>
                     </button>
                 </li>
                 <li>
                     <button class="social-media-btn" onclick="showInfo('linkedin')">
-                        <i class="fab fa-linkedin-in"></i> <!-- Font Awesome icon for LinkedIn -->
-                        <span>Linkedin</span>
+                        <i class="fab fa-linkedin-in icon"></i> <!-- Font Awesome icon for LinkedIn -->
+                        <span>LinkedIn</span>
                     </button>
                 </li>
                 <li>
                     <button class="social-media-btn" onclick="showInfo('youtube')">
-                        <i class="fab fa-youtube"></i> <!-- Font Awesome icon for YouTube -->
-                        <span>Youtube</span>
+                        <i class="fab fa-youtube icon"></i> <!-- Font Awesome icon for YouTube -->
+                        <span>YouTube</span>
                     </button>
                 </li>
                 <li>
                     <button class="social-media-btn" onclick="showInfo('github')">
-                        <i class="fab fa-github"></i> <!-- Font Awesome icon for GitHub -->
-                        <span >Github</span>
+                        <i class="fab fa-github icon"></i> <!-- Font Awesome icon for GitHub -->
+                        <span>GitHub</span>
                     </button>
                 </li>
                 <li>
                     <button class="social-media-btn" onclick="showInfo('discord')">
-                        <i class="fab fa-discord"></i> <!-- Font Awesome icon for Discord -->
+                        <i class="fab fa-discord icon"></i> <!-- Font Awesome icon for Discord -->
                         <span>Discord</span>
                     </button>
                 </li>
                 <li>
                     <button class="social-media-btn" onclick="showInfo('spotify')">
-                        <i class="fab fa-spotify"></i> <!-- Font Awesome icon for Spotify -->
+                        <i class="fab fa-spotify icon"></i> <!-- Font Awesome icon for Spotify -->
                         <span>Spotify</span>
                     </button>
                 </li>
@@ -81,28 +191,28 @@
             // Switch statement to determine information based on the selected social media
             switch(socialMedia) {
                 case "facebook":
-                    info = "Facebook is a popular social media platform to interact with friends and relatives. Let's dive into what Facebook Insights is, how to access it, and how to interpret the metrics it tracks.";
+                    info = "<strong>Facebook:</strong> Facebook is a popular social media platform used for connecting with friends and family, sharing updates, photos, and videos, and discovering news and information. It offers features like news feed, groups, events, and pages.";
                     break;
                 case "twitter":
-                    info = "Twitter is a microblogging platform...";
+                    info = "<strong>Twitter:</strong> Twitter is a microblogging platform that enables users to send and read short 280-character messages called 'tweets.' Users can also engage with others through retweets, likes, and replies.";
                     break;
                 case "instagram":
-                    info = "Instagram is a photo and video sharing platform...";
+                    info = "<strong>Instagram:</strong> Instagram is a photo and video sharing platform where users can upload photos and short videos, apply filters, and share them with their followers. It also offers features like stories and IGTV.";
                     break;
                 case "linkedin":
-                    info = "LinkedIn is a professional networking platform...";
+                    info = "<strong>LinkedIn:</strong> LinkedIn is a professional networking platform used for job searching, recruiting, and professional networking. Users can create profiles, connect with others, join groups, and follow companies.";
                     break;
                 case "youtube":
-                    info = "YouTube is a video sharing platform...";
+                    info = "<strong>YouTube:</strong> YouTube is a video sharing platform where users can upload, view, rate, share, and comment on videos. It offers a wide variety of content, including music videos, tutorials, vlogs, and more.";
                     break;
                 case "github":
-                    info = "GitHub is a platform for hosting and collaborating on code...";
+                    info = "<strong>GitHub:</strong> GitHub is a platform for hosting and collaborating on code. It allows developers to manage projects, track changes, and collaborate with others using features like pull requests, issues, and wikis.";
                     break;
                 case "discord":
-                    info = "Discord is a communication platform for communities...";
+                    info = "<strong>Discord:</strong> Discord is a communication platform for communities and gaming. Users can create servers, join channels, chat via text, voice, or video, and share files. It's widely used by gamers and communities alike.";
                     break;
                 case "spotify":
-                    info = "Spotify is a music streaming platform...";
+                    info = "<strong>Spotify:</strong> Spotify is a music streaming platform that offers a wide range of songs, albums, playlists, and podcasts. Users can discover new music, create playlists, and share their favorite tracks with others.";
                     break;
                 default:
                     info = "Select a social media platform to view information.";
