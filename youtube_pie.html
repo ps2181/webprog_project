@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Circle Bar Chart</title>
+<style>
+/* CSS Styles */
+body {
+    position: relative;
+    margin-left: 15px;
+    background-color: #eee;
+}
+
+#circleBar-web-text {
+    font-family: 'FranklinGothic-Book', "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+    font-size: 16px;
+    fill: #000;
+}
+
+#circleBar-web-labels tspan {
+    font-family: 'FranklinGothic-Book', "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+    font-size: 10px;
+    fill: #6D6E71;
+}
+
+#circleBar-web-values tspan {
+    font-family: 'FranklinGothic-Book', "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+    font-size: 9px;
+    font-weight: bold;
+    fill: #000;
+}
+
+#circleBar-web-values tspan {
+    fill: #7D3A4D;
+}
+</style>
+</head>
+<body>
+
+<svg version="1.1"
+     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+     x="0px" y="0px" width="900px" height="700px"
+     overflow="visible" xml:space="preserve">
+    
+    <g id="circleBarCharts">
+        
+        <!-- Web Circle Bar Chart -->
+        <g id="circleBar-web-group" transform="translate(0,0)">
+          <image id="circleBar-web-icon" opacity="0" x="166" y="112" overflow="visible" width="98" height="77" xlink:href="http://www.frank-designs.com/images/icon_web.png" />
+            <text id="circleBar-web-text" opacity="0" x="200" y="143">WEB</text>
+            <g id="circleBar-web-chart" transform="translate(215,150)"></g>
+            <clippath id="circleBar-web-clipPath">
+                <rect id="circleBar-web-clipLabels" x="205" y="215" width="180" height="0"></rect>
+            </clippath>
+            <g id="circleBar-web-legend" clip-path="url(#circleBar-web-clipPath)">
+                <text id="circleBar-web-values" transform="translate(222,225)"></text>
+                <text id="circleBar-web-labels" transform="translate(277,225)"></text>
+            </g>
+        </g>
+        <!-- END: Web Circle Bar Chart -->
+    </g>
+	 
+</svg>
+
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script>
+
+
+var chartData = {
+    "barCircleWeb":[
+        {"index":0.3, "value":262, "fill":"#231F20", "label":"T-Series"},
+        {"index":0.4, "value":250, "fill":"#403437", "label":"MrBeast"},
+        {"index":0.5, "value":273, "fill":"#53363C", "label":"Cocomelon - Nursery Rhymes"},
+        {"index":0.6, "value":171, "fill":"#5E2C3A", "label":"SET India"},
+        {"index":0.7, "value":121, "fill":"#660E34", "label":"Kids Diana Show	"},
+        {"index":0.8, "value":115, "fill":"#7D3A4D", "label":"Vlad and Niki"},
+        {"index":0.9, "value":114, "fill":"#96606B", "label":"Like Nastya"},
+        {"index":1,   "value":111,  "fill":"#B28A91", "label":"PewDiePie"},
+        {"index":1.1, "value":106,  "fill":"#D3BCBF", "label":"Zee Music Company"},
+        {"index":1.2, "value":100 , "fill":"#EDE4E5", "label":"WWE"}
+    ]
+};
+
+function drawBarCircleChart(data, target, values, labels) {
+    var w = 362,
+        h = 362,
+        size = data[0].value * 1.15,
+        radius = 200,
+        sectorWidth = .1,
+        radScale = 25,
+        sectorScale = 1.45,
+        target = d3.select(target),
+        valueText = d3.select(values),
+        labelText = d3.select(labels);
+
+
+    var arc = d3.svg.arc()
+        .innerRadius(function(d, i) { return (d.index / sectorScale) * radius + radScale; })
+        .outerRadius(function(d, i) { return ((d.index / sectorScale) + (sectorWidth / sectorScale)) * radius + radScale; })
+        .startAngle(Math.PI)
+        .endAngle(function(d) { return Math.PI + (d.value / size) * 2 * Math.PI; });
+
+    var path = target.selectAll("path")
+        .data(data);
+
+    //TODO: seperate color and index from data object, make it a pain to update object order
+    path.enter().append("svg:path")
+        .attr("fill", function(d, i) { return d.fill; })
+        .attr("stroke", "#D1D3D4")
+        .attr("class", "slice")
+        .attr("data-label", function(d) { return d.label; })
+        .attr("data-value", function(d) { return d.value; })
+        .on("mouseover", function() {
+            var label = d3.select(this).attr("data-label");
+            var value = d3.select(this).attr("data-value");
+            d3.select("#tooltip")
+                .style("left", d3.event.pageX + "px")
+                .style("top", d3.event.pageY + "px")
+                .select("#value")
+                .text(label + ": " + value + " subscribers");
+            d3.select("#tooltip").classed("hidden", false);
+        })
+        .on("mouseout", function() {
+            d3.select("#tooltip").classed("hidden", true);
+        })
+        .transition()
+        .ease("elastic")
+        .duration(1000)
+        .delay(function(d, i) { return i * 100; })
+        .attrTween("d", arcTween);
+
+    valueText.selectAll("tspan").data(data).enter()
+        .append("tspan")
+        .attr({
+            x: 50,
+            y: function(d, i) { return i * 14; },
+            "text-anchor": "end"
+        })
+        .text(function(d, i) { return data[i].value; });
+
+    labelText.selectAll("tspan").data(data).enter()
+        .append("tspan")
+        .attr({
+            x: 0,
+            y: function(d, i) { return i * 14; }
+        })
+        .text(function(d, i) { return data[i].label; });
+
+    function arcTween(b) {
+        var i = d3.interpolate({ value: 0 }, b);
+        return function(t) {
+            return arc(i(t));
+        };
+    }
+}
+
+// Animation Queue
+setTimeout(function() { drawBarCircleChart(chartData.barCircleWeb, "#circleBar-web-chart", "#circleBar-web-values", "#circleBar-web-labels"); }, 500);
+
+d3.select("#circleBar-web-icon")
+    .transition()
+    .delay(500)
+    .duration(500)
+    .attr("opacity", "1");
+d3.select("#circleBar-web-text")
+    .transition()
+    .delay(750)
+    .duration(500)
+    .attr("opacity", "1");
+
+d3.select("#circleBar-web-clipLabels")
+    .transition()
+    .delay(600)
+    .duration(1250)
+    .attr("height", "150");
+</script>
+<div id="tooltip" class="hidden">
+    <p><span id="value"></span></p>
+</div>
+
+</body>
+</html>
