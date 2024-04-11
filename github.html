@@ -149,7 +149,6 @@
 		height: 120px;
 		width: 120px;
 		margin: 0 15px;
-		font-position: center;
 		line-height: 120px;
 	
 	}
@@ -183,10 +182,10 @@
       <div class="main-cards">
         <div class="card">
           <div class="card-inner">
-            <h3>TOTAL YOUTUBE VIDEOS</h3>
+            <h3>DEVELOPERS WORLDWIDE</h3>
             <span class="material-icons-outlined">play_arrow</span>
           </div>
-          <h1>800 million</h1>
+          <h1>56 million</h1>
         </div>
 
         <div class="card">
@@ -216,12 +215,12 @@
 
       <div class="charts">
         <div class="charts-card">
-          <h2 class="chart-title">github user growth over the years (billion)</h2>
+          <h2 class="chart-title">github user growth over the years (millions)</h2>
           <div id="chart-line2"></div>
         </div>
 
         <div class="charts-card">
-          <h2 class="chart-title">Most subscribed users</h2>
+          <h2 class="chart-title">Top Programming Languages</h2>
           <div id="chart"></div>
 		</div>
 		<div class="charts-card">
@@ -243,26 +242,23 @@
   <script>
     // Sample data for demonstration
     var data = [
-      { x: new Date('2005-03-01').getTime(), y: .10 },
-      { x: new Date('2006-03-01').getTime(), y: .15 },
-      { x: new Date('2007-03-01').getTime(), y: .20 },
       { x: new Date('2008-03-01').getTime(), y: .30 },
       { x: new Date('2009-03-01').getTime(), y: .40 },
-      { x: new Date('2010-03-01').getTime(), y: .50 },
-      { x: new Date('2011-03-01').getTime(), y: .60 },
-      { x: new Date('2012-03-01').getTime(), y: .80 },
-      { x: new Date('2013-03-01').getTime(), y: 1.00 },
-      { x: new Date('2014-03-01').getTime(), y: 1.10 },
-      { x: new Date('2015-03-01').getTime(), y: 1.20 },
-      { x: new Date('2016-03-01').getTime(), y: 1.40 },
-      { x: new Date('2017-03-01').getTime(), y: 1.50 },
-      { x: new Date('2018-03-01').getTime(), y: 1.80 },
-      { x: new Date('2019-03-01').getTime(), y: 2.00 },
-      { x: new Date('2020-03-01').getTime(), y: 2.30 },
-      { x: new Date('2021-03-01').getTime(), y: 2.50 },
-      { x: new Date('2022-03-01').getTime(), y: 2.60 },
-      { x: new Date('2023-03-01').getTime(), y: 2.68 },
-      { x: new Date('2024-03-01').getTime(), y: 2.7 }
+      { x: new Date('2010-03-01').getTime(), y: 1 },
+      { x: new Date('2011-03-01').getTime(), y: 1.2 },
+      { x: new Date('2012-03-01').getTime(), y: 3 },
+      { x: new Date('2013-03-01').getTime(), y: 4 },
+      { x: new Date('2014-03-01').getTime(), y: 7 },
+      { x: new Date('2015-03-01').getTime(), y: 10 },
+      { x: new Date('2016-03-01').getTime(), y: 10.5 },
+      { x: new Date('2017-03-01').getTime(), y: 20 },
+      { x: new Date('2018-03-01').getTime(), y: 20.5 },
+      { x: new Date('2019-03-01').getTime(), y: 40 },
+      { x: new Date('2020-03-01').getTime(), y: 50 },
+      { x: new Date('2021-03-01').getTime(), y: 73 },
+      { x: new Date('2022-03-01').getTime(), y: 74 },
+      { x: new Date('2023-03-01').getTime(), y: 77 },
+      { x: new Date('2024-03-01').getTime(), y: 99 }
     ];
 
     // BAR CHART
@@ -316,12 +312,12 @@
 
     // PIE CHART
 var pieOptions = {
-  series: [263, 250, 173, 171, 121, 116, 114, 111, 106],
+  series: [56.1,50.5,37.8,34.2,28.3,27.7,23.7,23.5,22.9,22.5],
   chart: {
     width: 550,
     type: 'donut',
   },
-  labels: ["T-Series", "MrBeast", "Cocomelon", "SET India", "Kids Diana Show", "Vlad and Niki", "Like Nastya", "PewDiePie", "Zee Music Company"],
+  labels: ["HCL", "Rust", "TypeScript", "Lua", "Go", "Shell", "Makefile", "C", "Kotlin","Python"],
   dataLabels: {
     enabled: true,
     formatter: function (val) {
@@ -709,7 +705,7 @@ chart.render();
 
 var baroptions = {
   series: [{
-    data: [58.1, 63, 67.8, 71.7, 78.6, 83.1, 139, 144, 239, 462]
+    data: [11.5,7.6,5.9,5.6,5.4,5.2,5.2,4.8,4.7,4.6]
   }],
   chart: {
     type: 'bar',
@@ -745,7 +741,7 @@ var baroptions = {
     colors: ['#fff']
   },
   xaxis: {
-    categories: ['Philippines', 'Vietnam', 'Germany', 'Pakistan', 'Japan', 'Mexico', 'Indonesia','Brazil', 'USA', 'India'],
+    categories: ['USA','Iceland','Estonia','Luxemburg','Ireland','Malta','Sweden','Finland','Norway','Denmark'],
     labels: {
       style: {
         colors: ['#FF5733'] // Set the color of x-axis labels
