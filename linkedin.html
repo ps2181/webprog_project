@@ -183,10 +183,10 @@
       <div class="main-cards">
         <div class="card">
           <div class="card-inner">
-            <h3>TOTAL YOUTUBE VIDEOS</h3>
+            <h3>TOTAL LINKEDIN NEWSLETTER SUBS</h3>
             <span class="material-icons-outlined">play_arrow</span>
           </div>
-          <h1>800 million</h1>
+          <h1>450 million</h1>
         </div>
 
         <div class="card">
@@ -194,7 +194,7 @@
             <h3>CATEGORIES</h3>
             <span class="material-icons-outlined">category</span>
           </div>
-          <h1>15</h1>
+          <h1>550</h1>
         </div>
 
         <div class="card">
@@ -202,7 +202,7 @@
             <h3>REVENUE</h3>
             <span class="material-icons-outlined">account_balance</span>
           </div>
-          <h1>$31.5 Billion</h1>
+          <h1>$15.7 Billion</h1>
         </div>
 
         <div class="card">
@@ -216,7 +216,7 @@
 
       <div class="charts">
         <div class="charts-card">
-          <h2 class="chart-title">linkedin user growth over the years (billion)</h2>
+          <h2 class="chart-title">linkedin user growth over the years (million)</h2>
           <div id="chart-line2"></div>
         </div>
 
@@ -243,26 +243,19 @@
   <script>
     // Sample data for demonstration
     var data = [
-      { x: new Date('2005-03-01').getTime(), y: .10 },
-      { x: new Date('2006-03-01').getTime(), y: .15 },
-      { x: new Date('2007-03-01').getTime(), y: .20 },
-      { x: new Date('2008-03-01').getTime(), y: .30 },
-      { x: new Date('2009-03-01').getTime(), y: .40 },
-      { x: new Date('2010-03-01').getTime(), y: .50 },
-      { x: new Date('2011-03-01').getTime(), y: .60 },
-      { x: new Date('2012-03-01').getTime(), y: .80 },
-      { x: new Date('2013-03-01').getTime(), y: 1.00 },
-      { x: new Date('2014-03-01').getTime(), y: 1.10 },
-      { x: new Date('2015-03-01').getTime(), y: 1.20 },
-      { x: new Date('2016-03-01').getTime(), y: 1.40 },
-      { x: new Date('2017-03-01').getTime(), y: 1.50 },
-      { x: new Date('2018-03-01').getTime(), y: 1.80 },
-      { x: new Date('2019-03-01').getTime(), y: 2.00 },
-      { x: new Date('2020-03-01').getTime(), y: 2.30 },
-      { x: new Date('2021-03-01').getTime(), y: 2.50 },
-      { x: new Date('2022-03-01').getTime(), y: 2.60 },
-      { x: new Date('2023-03-01').getTime(), y: 2.68 },
-      { x: new Date('2024-03-01').getTime(), y: 2.7 }
+      
+      { x: new Date('2013-03-01').getTime(), y: 218 },
+      { x: new Date('2014-03-01').getTime(), y: 296 },
+      { x: new Date('2015-03-01').getTime(), y: 364 },
+      { x: new Date('2016-03-01').getTime(), y: 450 },
+      { x: new Date('2017-03-01').getTime(), y: 491 },
+      { x: new Date('2018-03-01').getTime(), y: 556 },
+      { x: new Date('2019-03-01').getTime(), y: 604 },
+      { x: new Date('2020-03-01').getTime(), y: 690 },
+      { x: new Date('2021-03-01').getTime(), y: 756 },
+      { x: new Date('2022-03-01').getTime(), y: 830 },
+      { x: new Date('2023-03-01').getTime(), y: 930 },
+      { x: new Date('2024-03-01').getTime(), y: 1000 }
     ];
 
     // BAR CHART
@@ -316,12 +309,12 @@
 
     // PIE CHART
 var pieOptions = {
-  series: [263, 250, 173, 171, 121, 116, 114, 111, 106],
+  series: [35.9, 19.7, 10.7, 10.15, 10.06, 7.57, 7.24, 7.18, 1.15],
   chart: {
     width: 550,
     type: 'donut',
   },
-  labels: ["T-Series", "MrBeast", "Cocomelon", "SET India", "Kids Diana Show", "Vlad and Niki", "Like Nastya", "PewDiePie", "Zee Music Company"],
+  labels: ["Bill Gates", "Richard Branson", "Jeff Weiner", "Arianna Huffington", "Satya Nadella", "Mark Cuban", "Tony Robbins", "Mellinda Gates", "Jack Welch"],
   dataLabels: {
     enabled: true,
     formatter: function (val) {
@@ -333,7 +326,7 @@ var pieOptions = {
   },
   legend: {
     formatter: function (val, opts) {
-      return val + " billion";
+      return val;
     },
     labels: {
       colors: ['#FF4560', '#008FFB', '#00E396', '#FEB019', '#775DD0', '#3F51B5', '#546E7A', '#D7263D', '#263238']
@@ -709,7 +702,7 @@ chart.render();
 
 var baroptions = {
   series: [{
-    data: [58.1, 63, 67.8, 71.7, 78.6, 83.1, 139, 144, 239, 462]
+    data: [17, 19, 21, 23, 26, 35, 59, 60, 99, 200]
   }],
   chart: {
     type: 'bar',
@@ -745,7 +738,7 @@ var baroptions = {
     colors: ['#fff']
   },
   xaxis: {
-    categories: ['Philippines', 'Vietnam', 'Germany', 'Pakistan', 'Japan', 'Mexico', 'Indonesia','Brazil', 'USA', 'India'],
+    categories: ['Italy', 'Mexico', 'Canada', 'Indonesia', 'France', 'UK', 'Brazil','China', 'India', 'USA'],
     labels: {
       style: {
         colors: ['#FF5733'] // Set the color of x-axis labels
